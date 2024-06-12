@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import Login from './views/Login/Login';
+import AuthPage from './views/AuthPage/AuthPage';
 
 
 
@@ -13,6 +14,11 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Login />
+  },
+
+  {
+    path: '/authPage',
+    element: <AuthPage />
   },
  
 
