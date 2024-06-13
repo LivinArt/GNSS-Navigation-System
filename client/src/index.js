@@ -6,8 +6,7 @@ import './index.css';
 import Login from './views/Login/Login';
 import AuthPage from './views/AuthPage/AuthPage';
 import MainDash from './views/MainDash/MainDash';
-
-
+import Team from './views/Team/Team';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -25,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: '/mainDash',
     element: <MainDash />
+  },
+
+  {
+    path: '/team',
+    element: <Team />
   }
  
 
