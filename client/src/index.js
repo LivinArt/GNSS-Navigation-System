@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import Login from './views/Login/Login';
 import AuthPage from './views/AuthPage/AuthPage';
+import MainDash from './views/MainDash/MainDash';
 
 
 
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
     path: '/authPage',
     element: <AuthPage />
   },
+
+  {
+    path: '/mainDash',
+    element: <MainDash />
+  }
  
 
 ])

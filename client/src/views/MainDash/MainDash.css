@@ -1,0 +1,117 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #4F64AD;
+  height: 50px;
+}
+
+.left-images {
+  display: flex;
+  gap: 10px;
+}
+
+.left-image {
+  height: 30px;
+  width: auto;
+}
+
+.center-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+.right-image {
+  display: flex;
+  align-items: center;
+}
+
+.right-image img {
+  height: 30px;
+  width: auto;
+}
+
+.saras-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.saras-title {
+  margin-bottom: 10px;
+}
+
+.saras-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mct-title {
+  font-size: 20px;
+}
+
+.divider {
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px; 
+}
+
+.left-buttons,
+.right-buttons {
+  display: flex;
+  justify-content: flex-start; 
+}
+
+.team-btn,
+.GNNS-btn,
+.GPS-btn,
+.Doc-btn {
+  height: 40px;
+  width: 120px;
+ border: none;
+  background-color: white; 
+  color: black; 
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s; 
+  font-weight: bold;
+}
+
+
+.GNNS-btn,
+.GPS-btn{
+  border: 0.5px solid #4F64AD;
+}
+
+.left-buttons .team-btn:not(:last-child),
+.left-buttons .GNNS-btn:not(:last-child),
+.right-buttons .GPS-btn:not(:last-child),
+.right-buttons .Doc-btn:not(:last-child) {
+  margin-right: 30px; 
+}
+
+.left-buttons {
+  margin-right: 20px; 
+}
+
+.right-buttons {
+  margin-left: 20px;
+}

@@ -22,7 +22,7 @@ function AuthPage() {
       </div>
       <form onSubmit={handleSubmit} className="custom-auth-form">
         <div className="form-header-container">
-          <div><span className='roger-text'>ROGER</span> BY</div>
+          <div><span className='roger-text'>SARAS</span> BY</div>
           <div className="institution-name">
             <h6>Military College Of Telecommunication & Engineering</h6>
           </div>
