@@ -21,13 +21,13 @@ function App() {
   return (
     <div className="custom-login-container">
       <div className="system-title">
-        Multi-Band GNSS Assisted Navigation System
+        Multi-Band GNSS Navigation System
       </div>
       <form onSubmit={handleSubmit} className="custom-login-form">
         <div className="form-header">
           <div><span className='roger-text'>SARAS</span> BY</div>
           <div className="institution-name">
-            <h6>Military College Of Telecommunication & Engineering</h6>
+            <h6>Military College Of Telecommunication  Engineering</h6>
           </div>
         </div>
         <input

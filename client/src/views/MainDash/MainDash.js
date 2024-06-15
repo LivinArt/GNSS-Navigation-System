@@ -16,7 +16,7 @@ function MainDash() {
           <img src={question} alt="Left Image 2" className="left-image" />
         </div>
         <div className="center-title">
-          Multi-Band GNSS Assisted Navigation System
+          Multi-Band GNSS  Navigation System
         </div>
         <div className="right-image">
           <img src={setting} alt="Right Image" className="setting-image" />
@@ -25,7 +25,7 @@ function MainDash() {
       <div className="saras-container">
         <div className="saras-title">
           <div><span className='saras-text'>SARAS</span> BY</div>
-          <div className='mct-title'>Military College Of Telecommunication & Engineering</div>
+          <div className='mct-title'>Military College Of Telecommunication  Engineering</div>
         </div>
         <hr className='divider' />
         <svg width="200" height="50" xmlns="http://www.w3.org/2000/svg" style={{position: "relative", top: "-17px"}}>
