@@ -8,6 +8,10 @@ import docIcon from './doc.png';
 import logo from './logo.png'; 
 
 function MainDash() {
+  const openWetty = () => {
+    window.open('http://localhost:3002', '_blank');
+  };
+
   return (
     <div className="dashboard-container">
       <nav className="navbar">
@@ -16,7 +20,7 @@ function MainDash() {
           <img src={question} alt="Left Image 2" className="left-image" />
         </div>
         <div className="center-title">
-          Multi-Band GNSS  Navigation System
+          Multi-Band GNSS Navigation System
         </div>
         <div className="right-image">
           <img src={setting} alt="Right Image" className="setting-image" />
@@ -25,7 +29,7 @@ function MainDash() {
       <div className="saras-container">
         <div className="saras-title">
           <div><span className='saras-text'>SARAS</span> BY</div>
-          <div className='mct-title'>Military College Of Telecommunication  Engineering</div>
+          <div className='mct-title'>Military College Of Telecommunication Engineering</div>
         </div>
         <hr className='divider' />
         <svg width="200" height="50" xmlns="http://www.w3.org/2000/svg" style={{position: "relative", top: "-17px"}}>
@@ -42,7 +46,7 @@ function MainDash() {
             fontSize="16"
             fill="#4F64AD"
             fontWeight="bold"
-            >
+          >
             KARKEN RF
           </text>
         </svg>
@@ -52,7 +56,7 @@ function MainDash() {
           <button className="team-btn">
             <img src={teamIcon} alt="Team Icon" className="doc-team-icon" /> TEAM
           </button>
-          <button className="GNNS-btn">GNNS RX</button>
+          <button className="GNNS-btn" onClick={openWetty}>GNNS RX</button>
         </div>
         <div className="right-buttons">
           <button className="GPS-btn">GPS TX</button>
