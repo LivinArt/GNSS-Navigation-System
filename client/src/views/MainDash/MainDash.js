@@ -5,7 +5,7 @@ import question from './question.png';
 import setting from './setting.png';
 import teamIcon from './team.png';
 import docIcon from './doc.png';
-import logo from './logo.png'; 
+import logo from './logo.png';
 
 function MainDash() {
   const openWetty = () => {
@@ -28,11 +28,11 @@ function MainDash() {
       </nav>
       <div className="saras-container">
         <div className="saras-title">
-          <div><span className='saras-text'>SARAS</span> BY</div>
-          <div className='mct-title'>Military College Of Telecommunication Engineering</div>
+          <div><span className="saras-text">SARAS</span> BY</div>
+          <div className="mct-title">Military College Of Telecommunication Engineering</div>
         </div>
-        <hr className='divider' />
-        <svg width="200" height="50" xmlns="http://www.w3.org/2000/svg" style={{position: "relative", top: "-17px"}}>
+        <hr className="divider" />
+        <svg width="200" height="50" xmlns="http://www.w3.org/2000/svg" style={{ position: "relative", top: "-17px" }}>
           <polygon
             points="0,0 200,0 160,50 40,50"
             style={{ fill: 'white', stroke: 'grey', strokeWidth: 1 }}
@@ -60,9 +60,16 @@ function MainDash() {
         </div>
         <div className="right-buttons">
           <button className="GPS-btn">GPS TX</button>
-          <button className="Doc-btn">
-            <img src={docIcon} alt="Doc Icon" className="doc-team-icon" /> DOC
-          </button>
+          <div className="dropdown-container">
+            <select className="dropdown-select" id="dropdownSelect" defaultValue="">
+              <option value="" disabled>Doc</option>
+              <option value="option1">GNNS RX </option>
+              <option value="option2">KRAKEN SYS</option>
+              <option value="option3">GPS TX</option>
+              <option value="option3">USRP B 205 mini</option>
+              <option value="option3">Hack RF</option>
+            </select>
+          </div>
         </div>
       </div>
       <div className="logo-container">

@@ -28,11 +28,12 @@ function App() {
           text: 'Login Successful',
           icon: 'success',
           confirmButtonText: 'OK'
+        }).then(() => {
+          window.location.href = '/mainDash'; 
         });
-        // Clear input fields after successful login
+        
         setUsername('');
         setPassword('');
-        // Handle successful login (e.g., redirect to another page)
       } else {
         Swal.fire({
           title: 'Error!',
