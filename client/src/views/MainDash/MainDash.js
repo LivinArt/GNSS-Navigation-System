@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './MainDash.css';
 import item from './item.png';
 import question from './question.png';
@@ -6,10 +6,43 @@ import setting from './setting.png';
 import teamIcon from './team.png';
 import docIcon from './doc.png';
 import logo from './logo.png';
+import NestedMenu from '../../components/NestedMenu/NestedMenu';
 
 function MainDash() {
   const openWetty = () => {
     window.open('http://localhost:3002', '_blank');
+  };
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
+
+  const dropdownRef = useRef(null);
+
+  // Prevent propagation when clicking on the dropdown icon
+  const handleDropdownIconClick = (event) => {
+    event.stopPropagation(); // Prevents the click event from reaching the button
+    toggleDropdown(); // Toggle dropdown state
   };
 
   return (
@@ -56,20 +89,11 @@ function MainDash() {
           <button className="team-btn">
             <img src={teamIcon} alt="Team Icon" className="doc-team-icon" /> TEAM
           </button>
-          <button className="GNNS-btn" onClick={openWetty}>GNNS RX</button>
+          <button className="GNNS-btn">GNNS RX</button>
         </div>
         <div className="right-buttons">
           <button className="GPS-btn">GPS TX</button>
-          <div className="dropdown-container">
-            <select className="dropdown-select" id="dropdownSelect" defaultValue="">
-              <option value="" disabled>Doc</option>
-              <option value="option1">GNNS RX </option>
-              <option value="option2">KRAKEN SYS</option>
-              <option value="option3">GPS TX</option>
-              <option value="option3">USRP B 205 mini</option>
-              <option value="option3">Hack RF</option>
-            </select>
-          </div>
+          <NestedMenu />
         </div>
       </div>
       <div className="logo-container">

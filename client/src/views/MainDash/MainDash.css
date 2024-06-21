@@ -143,6 +143,7 @@
   background-color: gray;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 0;
 }
 
 .logo-container::before {
@@ -153,15 +154,5 @@
   right: 0;
 }
 
-.dropdown-select {
-  height: 40px;
-  width: 120px;
-  border: none;
-  background-color: white;
-  color: black;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, box-shadow 0.3s;
-  font-weight: bold;
-}
+
+
