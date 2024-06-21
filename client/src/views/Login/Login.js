@@ -18,7 +18,7 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('/api/v1/login', {
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/login`, {
         userName: username,
         password: password,
       });
