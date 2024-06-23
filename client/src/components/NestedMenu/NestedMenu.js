@@ -6,21 +6,26 @@ import { MENUS } from "./MenuItems";
 function SubMenu({ label, subMenus, onClick }) {
   const [activeSubMenu, setActiveSubMenu] = useState(false);
 
-  const handleClick = () => {
-    if (subMenus.length === 0) {
-      onClick();
-    } else {
-      setActiveSubMenu(!activeSubMenu);
+  const handleMouseEnter = () => {
+    if (subMenus.length > 0) {
+      setActiveSubMenu(true);
     }
   };
 
+  const handleMouseLeave = () => {
+    setActiveSubMenu(false);
+  };
+
   return (
-    <div className="menu-options">
-      <div className="main-menu" onClick={handleClick}>
+    <div 
+      className="menu-options" 
+      onMouseEnter={handleMouseEnter} 
+      onMouseLeave={handleMouseLeave}>
+      <div className="main-menu">
         {label}
       </div>
       {activeSubMenu && (
-        <div className="sub-menu" onMouseLeave={() => setActiveSubMenu(false)}>
+        <div className="sub-menu">
           {subMenus.map((subMenu, index) => {
             const { label, onClick } = subMenu;
 
@@ -51,14 +56,12 @@ function NestedMenu() {
           <div className="main-menu-container" onMouseLeave={() => setActiveMenu(false)}>
             {MENUS.map((menu, index) => {
               const { label, onClick, subMenus } = menu;
-
               return (
                 <SubMenu
                   subMenus={subMenus}
                   onClick={onClick}
                   label={label}
-                  key={index}
-                />
+                  key={index}/>
               );
             })}
           </div>
