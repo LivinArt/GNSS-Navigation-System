@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './MainDash.css';
 import item from './item.png';
 import question from './question.png';
@@ -78,17 +79,16 @@ function MainDash() {
             fontFamily="sans-serif"
             fontSize="16"
             fill="#4F64AD"
-            fontWeight="bold"
-          >
+            fontWeight="bold">
             KARKEN RF
           </text>
         </svg>
       </div>
       <div className="button-container">
         <div className="left-buttons">
-          <button className="team-btn">
+          <Link to="/team" className="team-btn">
             <img src={teamIcon} alt="Team Icon" className="doc-team-icon" /> TEAM
-          </button>
+          </Link>
           <button className="GNNS-btn">GNNS RX</button>
         </div>
         <div className="right-buttons">

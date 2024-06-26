@@ -95,6 +95,20 @@
   font-weight: bold;
 }
 
+
+.team-btn {
+  text-decoration: none; 
+  margin-top: 1px;
+  display: inline-flex;
+  align-items: center; 
+  padding: 10px; 
+  color: inherit; 
+}
+
+.team-btn img {
+  margin-right: 8px; 
+}
+
 .GNNS-btn,
 .GPS-btn {
   border: 0.5px solid #4F64AD;
