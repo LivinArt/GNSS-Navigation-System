@@ -168,5 +168,33 @@
   right: 0;
 }
 
+.input-update-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.website-input {
+  width: 50%; /* Decrease the width */
+  padding: 5px;
+  font-size: 14px;
+  margin-right: 10px; /* Add some space between input and button */
+}
+
+.update-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #4F64AD;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #3d4f88;
+}
+
+
 
 

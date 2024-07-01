@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 import './MainDash.css';
 import item from './item.png';
 import question from './question.png';
@@ -15,6 +16,7 @@ function MainDash() {
   };
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [website, setWebsite] = useState(localStorage.getItem('website') || '');
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -24,7 +26,12 @@ function MainDash() {
     setDropdownOpen(false);
   };
 
-  // Close dropdown when clicking outside
+  const handleUpdate = () => {
+    console.log(`Website updated to: ${website}`);
+    localStorage.setItem('website', website);
+    toast.success('Website updated successfully!');
+  };
+
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -40,14 +47,14 @@ function MainDash() {
 
   const dropdownRef = useRef(null);
 
-  // Prevent propagation when clicking on the dropdown icon
   const handleDropdownIconClick = (event) => {
-    event.stopPropagation(); // Prevents the click event from reaching the button
-    toggleDropdown(); // Toggle dropdown state
+    event.stopPropagation();
+    toggleDropdown();
   };
 
   return (
     <div className="dashboard-container">
+      <Toaster />
       <nav className="navbar">
         <div className="left-images">
           <img src={item} alt="Left Image 1" className="left-image" />
@@ -83,6 +90,16 @@ function MainDash() {
             KARKEN RF
           </text>
         </svg>
+        <div className="input-update-container">
+          <input
+            type="text"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            placeholder="127.0.0.1:8080"
+            className="website-input"
+          />
+          <button onClick={handleUpdate} className="update-btn">Update</button>
+        </div>
       </div>
       <div className="button-container">
         <div className="left-buttons">
