@@ -28,6 +28,7 @@ function MainDash() {
 
   const handleUpdate = () => {
     console.log(`Website updated to: ${website}`);
+    console.log(website);
     localStorage.setItem('website', website);
     toast.success('Website updated successfully!');
   };
