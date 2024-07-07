@@ -102,6 +102,7 @@
   align-items: center; 
   padding: 10px; 
   color: inherit; 
+  border-radius: 10px;
 }
 
 .team-btn img {
@@ -111,6 +112,7 @@
 .GNNS-btn,
 .GPS-btn {
   border: 0.5px solid #4F64AD;
+  border-radius: 10px;
 }
 
 .left-buttons .team-btn:not(:last-child),
@@ -225,8 +227,8 @@
 }
 
 .website-iframe {
-  width: 80%; /* Adjust this value as needed */
-  max-width: 1200px; /* Adjust this value as needed */
+  width: 80%; 
+  max-width: 1200px; 
   height: 500px;
   border: none;
 }
