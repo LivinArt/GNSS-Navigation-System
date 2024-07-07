@@ -95,7 +95,6 @@
   font-weight: bold;
 }
 
-
 .team-btn {
   text-decoration: none; 
   margin-top: 1px;
@@ -175,11 +174,34 @@
   margin-top: 10px;
 }
 
+.input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.small-input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+.small-input {
+  width: 120px; 
+  padding: 5px;
+  font-size: 14px;
+}
+
 .website-input {
-  width: 50%; 
+  width: 300px; 
   padding: 5px;
   font-size: 14px;
   margin-right: 10px; 
+}
+
+.small-box {
+  width: 20px;
 }
 
 .update-btn {
@@ -195,6 +217,16 @@
   background-color: #3d4f88;
 }
 
+.website-display {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
+.website-iframe {
+  width: 80%; /* Adjust this value as needed */
+  max-width: 1200px; /* Adjust this value as needed */
+  height: 500px;
+  border: none;
+}

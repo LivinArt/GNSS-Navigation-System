@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import './MainDash.css';
 import item from './item.png';
-import question from './question.png';
+import terminal from './terminal.png';
 import setting from './setting.png';
 import teamIcon from './team.png';
 import docIcon from './doc.png';
@@ -18,6 +18,9 @@ function MainDash() {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [website, setWebsite] = useState(localStorage.getItem('website') || '');
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
+  const [updatedWebsite, setUpdatedWebsite] = useState(website);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -29,8 +32,8 @@ function MainDash() {
 
   const handleUpdate = () => {
     console.log(`Website updated to: ${website}`);
-    console.log(website);
     localStorage.setItem('website', website);
+    setUpdatedWebsite(website);
     toast.success('Website updated successfully!');
   };
 
@@ -68,7 +71,7 @@ function MainDash() {
       <nav className="navbar">
         <div className="left-images">
           <img src={item} alt="Left Image 1" className="left-image" />
-          <img src={question} alt="Left Image 2" className="left-image" />
+          <img src={terminal} alt="Left Image 2" className="left-image" />
         </div>
         <div className="center-title">
           Multi-Band GNSS Navigation System
@@ -101,13 +104,31 @@ function MainDash() {
           </text>
         </svg>
         <div className="input-update-container">
-          <input
-            type="text"
-            value={website}
-            onChange={(e) => setWebsite(e.target.value)}
-            placeholder="127.0.0.1:8080"
-            className="website-input"
-          />
+          <div className="input-box">
+            <div className="small-input-box">
+              <input
+                type="text"
+                value={latitude}
+                onChange={(e) => setLatitude(e.target.value)}
+                className="small-input"
+              />
+            </div>
+            <div className="small-input-box">
+              <input
+                type="text"
+                value={longitude}
+                onChange={(e) => setLongitude(e.target.value)}
+                className="small-input"
+              />
+            </div>
+            <input
+              type="text"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              placeholder="127.0.0.1:8080"
+              className="website-input"
+            />
+          </div>
           <button onClick={handleUpdate} className="update-btn">Update</button>
         </div>
       </div>
@@ -128,6 +149,11 @@ function MainDash() {
       <div className="logo-container">
         <img src={logo} alt="Logo" className="logo" />
       </div>
+      {updatedWebsite && (
+        <div className="website-display">
+          <iframe src={`http://${updatedWebsite}`} title="Website Display" className="website-iframe"></iframe>
+        </div>
+      )}
     </div>
   );
 }
