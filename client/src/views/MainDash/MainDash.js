@@ -53,6 +53,18 @@ function MainDash() {
     toggleDropdown();
   };
 
+  const openGnnsRx = () => {
+    window.location.href = 'http://127.0.0.1/script/api/1.php';
+  };
+
+  const openGpsTx = () => {
+    window.location.href = 'http://127.0.0.1/script/api/2.php';
+  };
+
+  const openGpxTx = () => {
+    window.location.href = 'http://127.0.0.1/script/api/3.php';
+  };
+
   return (
     <div className="dashboard-container">
       <Toaster />
@@ -107,10 +119,11 @@ function MainDash() {
           <Link to="/team" className="team-btn">
             <img src={teamIcon} alt="Team Icon" className="doc-team-icon" /> TEAM
           </Link>
-          <button className="GNNS-btn">GNNS RX</button>
+          <button className="GNNS-btn" onClick={openGnnsRx}>GNNS RX</button>
+          <button className="GNNS-btn" onClick={openGpsTx}>NavIC</button>
         </div>
         <div className="right-buttons">
-          <button className="GPS-btn">GPS TX</button>
+          <button className="GPS-btn" onClick={openGpxTx}>GPS TX</button>
           <NestedMenu />
         </div>
       </div>
