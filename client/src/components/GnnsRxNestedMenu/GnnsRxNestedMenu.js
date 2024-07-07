@@ -1,14 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./GnnsRxNestedMenu.css";
 import { MENUS } from "./GnnsRxItem";
 
-function SubMenu({ label, subMenus, onClick }) {
+function SubMenu({ label, onClick }) {
   const [activeSubMenu, setActiveSubMenu] = useState(false);
 
   const handleMouseEnter = () => {
-    if (subMenus.length > 0) {
-      setActiveSubMenu(true);
-    }
+    setActiveSubMenu(true);
   };
 
   const handleMouseLeave = () => {
@@ -20,21 +18,9 @@ function SubMenu({ label, subMenus, onClick }) {
       className="menu-options"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
     >
       <div className="main-menu">{label}</div>
-      {activeSubMenu && (
-        <div className="sub-menu">
-          {subMenus.map((subMenu, index) => (
-            <div
-              key={index}
-              className="sub-menu-options"
-              onClick={subMenu.onClick}
-            >
-              {subMenu.label}
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
@@ -46,27 +32,27 @@ function GnnsRxNestedMenu() {
     setActiveMenu(!activeMenu);
   };
 
-  const handleLinkClick = () => {
-    window.location.href = "http://127.0.0.1/script/api/1.php";
+  const handleLinkClick = (url) => {
+    window.location.href = url;
   };
 
   return (
     <div>
-      <div className="menu-container" onMouseLeave={handleHover}>
+      <div className="menu-container" onMouseLeave={() => setActiveMenu(false)}>
         <div
           className="open-menu-box"
           onMouseEnter={handleHover}
-          onClick={handleLinkClick}>
-          <span className='btn-text'>GNNS RX</span>
+          onClick={() => setActiveMenu(true)}
+        >
+          <span className="btn-text">GNNS RX</span>
         </div>
         {activeMenu && (
-          <div className="main-menu-container" onMouseLeave={() => setActiveMenu(false)}>
+          <div className="main-menu-container">
             {MENUS.map((menu, index) => (
               <SubMenu
                 key={index}
                 label={menu.label}
-                subMenus={menu.subMenus}
-                onClick={menu.onClick}
+                onClick={() => handleLinkClick(menu.onClickUrl)}
               />
             ))}
           </div>
