@@ -9,6 +9,7 @@ import teamIcon from './team.png';
 import docIcon from './doc.png';
 import logo from './logo.png';
 import NestedMenu from '../../components/NestedMenu/NestedMenu';
+import GnnsRxNestedMenu from '../../components/GnnsRxNestedMenu/GnnsRxNestedMenu';
 
 function MainDash() {
   const openWetty = () => {
@@ -55,10 +56,6 @@ function MainDash() {
 
   const openGnnsRx = () => {
     window.location.href = 'http://127.0.0.1/script/api/1.php';
-  };
-
-  const openGpsTx = () => {
-    window.location.href = 'http://127.0.0.1/script/api/2.php';
   };
 
   const openGpxTx = () => {
@@ -119,8 +116,9 @@ function MainDash() {
           <Link to="/team" className="team-btn">
             <img src={teamIcon} alt="Team Icon" className="doc-team-icon" /> TEAM
           </Link>
-          <button className="GNNS-btn" onClick={openGnnsRx}>GNNS RX</button>
-          <button className="GNNS-btn" onClick={openGpsTx}>NavIC</button>
+         <div>
+         <GnnsRxNestedMenu />
+         </div>
         </div>
         <div className="right-buttons">
           <button className="GPS-btn" onClick={openGpxTx}>GPS TX</button>
