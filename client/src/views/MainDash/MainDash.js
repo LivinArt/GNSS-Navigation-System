@@ -144,14 +144,14 @@ function MainDash() {
       <div className="button-container">
         <div className="left-buttons">
           <Link to="/team" className="team-btn">
-            <img src={teamIcon} alt="Team Icon" className="doc-team-icon" /> TEAM
+            <img src={teamIcon} alt="Team Icon" className="doc-team-icon" /> <span className='btn-text'>TEAM</span>
           </Link>
          <div>
          <GnnsRxNestedMenu />
          </div>
         </div>
         <div className="right-buttons">
-          <button className="GPS-btn" onClick={openGpxTx}>GPS TX</button>
+          <button className="GPS-btn" onClick={openGpxTx}><span className='btn-text'>GPS TX</span></button>
           <NestedMenu />
         </div>
       </div>

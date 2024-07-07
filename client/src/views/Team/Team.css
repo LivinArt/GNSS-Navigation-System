@@ -1,83 +1,118 @@
 .team-page {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    position: relative;
-  }
-  
-  .line {
-    position: absolute;
-    top: 50%;
-    width: calc(50% - 40px);
-    height: 1px;
-    background-color: #ccc;
-  }
-  
-  .line:first-of-type {
-    left: 0;
-  }
-  
-  .line:last-of-type {
-    right: 0;
-  }
-  
-  .logo {
-    max-width: 100%;
-    height: auto;
-    margin: 0 20px;
-    z-index: 1;
-  }
-  
-  .team-member {
-    display: flex;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px 0;
-    gap: 30px;
-  }
-  
-  .profile-image {
-    flex: 0 0 80px;
-  }
-  
-  .profile-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .member-info {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; 
-    flex-wrap: wrap; 
-  }
-  
-  .name,
-  .position,
-  .company {
-    margin: 0;
-    text-align: center;
-    flex: 1;
-  }
-  
-  .name {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .position,
-  .company {
-    font-size: 16px;
-    color: #666;
-  }
-  
+  text-align: center;
+  position: relative;
+}
+
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+.content {
+  display: inline-block;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  height: 1px;
+  width: 50px;
+  background-color: grey;
+  margin: 0 10px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 40px;
+}
+
+.team-member {
+  margin: 0 20px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.position {
+  font-size: 14px;
+  color: grey;
+}
+
+.separator {
+  margin: 20px 0;
+}
+
+.collaborators-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.collab-text {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.company-logos {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin-top: 30px;
+}
+
+.company-logo {
+  width: 100px;
+  height: auto;
+}
+
+
+.geo-logo{
+  width: 268px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.dristhi-logo{
+ width: 133px;
+  height: 106px;
+}
+
+.livinart-logo{
+  height: 106px;
+  width: 106px;
+}
+
+
+.geo-logo{
+  width: 268px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.dristhi-logo{
+ width: 133px;
+  height: 106px;
+}
+
+.livinart-logo{
+  height: 106px;
+  width: 106px;
+}

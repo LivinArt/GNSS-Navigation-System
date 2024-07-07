@@ -84,7 +84,7 @@
 .GPS-btn,
 .Doc-btn {
   height: 40px;
-  width: 120px;
+  width: 133px;
   border: none;
   background-color: white;
   color: black;
@@ -145,8 +145,8 @@
 }
 
 .logo {
-  width: 100px; 
-  height: auto; 
+  width: 200px; 
+  height: 200px; 
 }
 
 .logo-container::before,
@@ -233,4 +233,8 @@
   max-width: 1200px; 
   height: 500px;
   border: none;
+}
+
+.btn-text{
+  font-size: 17px;
 }

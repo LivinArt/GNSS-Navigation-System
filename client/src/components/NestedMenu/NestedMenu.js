@@ -49,7 +49,7 @@ function NestedMenu() {
       <div className="menu-container-doc">
         <div className="open-menu-box" onClick={() => setActiveMenu(!activeMenu)}>
           <img src={DocImg} className="menu-icon" alt="Menu Icon" />
-          Doc
+          <span className='btn-text'>Doc</span>
           <span className="down-arrow-symbol">▼</span>
         </div>
         {activeMenu && (

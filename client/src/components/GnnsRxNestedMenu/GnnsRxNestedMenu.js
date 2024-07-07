@@ -57,7 +57,7 @@ function GnnsRxNestedMenu() {
           className="open-menu-box"
           onMouseEnter={handleHover}
           onClick={handleLinkClick}>
-          GNNS RX
+          <span className='btn-text'>GNNS RX</span>
         </div>
         {activeMenu && (
           <div className="main-menu-container" onMouseLeave={() => setActiveMenu(false)}>
