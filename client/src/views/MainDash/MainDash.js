@@ -30,10 +30,19 @@ function MainDash() {
     setDropdownOpen(false);
   };
 
+  function convertToProperUrl(inputUrl) {
+    let domain = inputUrl.replace('www.', '').replace('http://', '').replace('https://', '');
+    return `https://${domain}`;
+}
+
   const handleUpdate = () => {
-    console.log(`Website updated to: ${website}`);
-    localStorage.setItem('website', website);
-    setUpdatedWebsite(website);
+
+    const properUrl = convertToProperUrl(website);
+
+    console.log(`Website updated to: ${properUrl}`);
+    localStorage.setItem('website', properUrl);
+    setUpdatedWebsite(properUrl);
+    setWebsite(properUrl);
     toast.success('Website updated successfully!');
   };
 
@@ -151,7 +160,7 @@ function MainDash() {
       </div>
       {updatedWebsite && (
         <div className="website-display">
-          <iframe src={`http://${updatedWebsite}`} title="Website Display" className="website-iframe"></iframe>
+          <iframe src={updatedWebsite} title="Website Display" className="website-iframe"></iframe>
         </div>
       )}
     </div>
